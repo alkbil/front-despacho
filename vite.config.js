@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://qic534o8o0.execute-api.us-east-1.amazonaws.com',
+        target: 'http://10.0.2.150:8080',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
