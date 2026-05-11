@@ -33,6 +33,8 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            sudo systemctl stop nginx || true
+            sudo systemctl disable nginx || true
             docker pull alkbil/frontend-innovatech:latest
             docker stop frontend || true
             docker rm frontend || true
